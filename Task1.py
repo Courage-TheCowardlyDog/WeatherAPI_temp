@@ -44,8 +44,7 @@ else:
     wb.save('Meanwhile.xlsm')
 
 while True:
-    print("Updating every second...")
-    time.sleep(1)
+    print("Updating every Minute...")
     for i in range(2,7):
         CName = weatherSheet.cell(row=i, column=1).value
         status = weatherSheet.cell(row=i, column=5).value
@@ -60,5 +59,6 @@ while True:
                 temp = CtoF(temp)
             weatherSheet.cell(row=i, column=2).value = temp
             weatherSheet.cell(row=i, column=3).value = humidity
+    wb.save('Meanwhile.xlsm')
+    time.sleep(60)
 
-wb.save('Meanwhile.xlsm')
